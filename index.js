@@ -1,3 +1,5 @@
+
+
 function loadLessons (){
     fetch("https://openapi.programming-hero.com/api/levels/all")
     .then(lessons=>lessons.json())
@@ -78,13 +80,13 @@ function loadWord(id){
 function showData(data){
     const h3 = document.querySelector('.modal-box')
     h3.innerHTML =`
-        <h1 class="poppins font-semibold text-4xl">${data.word}(<i class="fa-solid fa-microphone-lines"></i> : ${data.pronunciation})</h1>
-        <h2>Meaning</h2>
+        <h1 class="poppins font-semibold text-4xl mb-8">${data.word}(<i class="fa-solid fa-microphone-lines"></i> : ${data.pronunciation})</h1>
+        <h2 class="mb-2 font-bold">Meaning</h2>
         <p>${data.meaning}</p>
-        <h2>Example</h2>
-        <p>${data.sentence}</p>
-        <h2>সমার্থক শব্দ গুলো</h2>
-        
+        <h2 class="mt-8 font-bold">Example</h2>
+        <p class="mt-2">${data.sentence}</p>
+        <h2 class"mt-8 mb-2 font-bold">সমার্থক শব্দ গুলো</h2>
+        <div class"mt-2">${createElements(data.synonyms)}</div>
         <div class="modal-action">
               <form method="dialog">
                 <button class="btn">Close</button>
@@ -92,4 +94,10 @@ function showData(data){
             </div>
     `
     my_modal_5.showModal();
+}
+        
+const createElements=(arr)=>{
+    const spans = arr.map((el)=>`<span class="btn">${el}</span>`);
+    return spans.join(" ");
+    
 }
