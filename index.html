@@ -147,6 +147,35 @@
         <div
           class="lessonsContainer flex flex-wrap justify-center gap-4 mb-10"
         ></div>
+
+        <section class="search flex justify-center items-center mb-8">
+          <div class="join">
+            <div>
+              <label class="input validator join-item">
+                
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </g>
+                </svg>
+                <input id="input" type="text" placeholder="Search a word"  />
+              </label>
+              
+            </div>
+            <button id="searchButton" class="btn btn-primary join-item"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          </div>
+        </section>
+
+        <section class="hidden spinner flex justify-center items-center">
+          <span class="loading loading-spinner loading-xl"></span>
+        </section>
+
         <div
           class="defaultText bg-[rgba(248,248,248,1)] max-w-[1760px] mx-auto rounded-3xl py-16"
         >
@@ -166,10 +195,7 @@
         <!-- Open the modal using ID.showModal() method -->
         <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-          <div class="modal-box rounded-3xl">
-
-            
-          </div>
+          <div class="modal-box rounded-3xl"></div>
         </dialog>
       </section>
     </main>
